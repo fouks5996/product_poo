@@ -1,47 +1,25 @@
-// class Router {
-// 	showData() {
-// 		return new Products().showItem();
-// 	}
+let Products = require("./controller");
 
-// 	introduction() {
-// 		let q = "Bienvenue à THP !\nVeux tu afficher la liste des produits ? ";
-
-// 		if (confirm(q)) {
-// 			this.showData();
-// 			this.returnToHome();
-// 		} else {
-// 			alert("Au revoir !!");
-// 		}
-// 	}
-
-// 	returnToHome() {
-// 		console.log("*****************");
-// 		console.log("Quitter : press Q");
-// 		console.log("*****************");
-
-// 		document.addEventListener("keypress", (e) => {
-// 			if (e.key == "Q" || e.key == "q") {
-// 				location.reload();
-// 			}
-// 		});
-// 	}
-// }
-
-class Router {
+module.exports = class Router {
 	showData() {
-		return new Products().showItem();
+		return new Products().index();
+	}
+
+	showDetail() {
+		return new Products().show();
 	}
 
 	introduction() {
 		let pres = "Bienvenue à THP !";
 		console.log(pres);
 		console.log("Veux tu afficher la liste des produits ?");
-		console.log("oui : 1");
-		console.log("non : 2");
+		console.log("Afficher la liste : 1");
+		console.log("Quitter le programme : 2");
 		var res = prompt("-->");
 
 		if (res == 1) {
 			this.showData();
+			this.showDetail();
 			this.returnToHome();
 		} else if (res == 2) {
 			console.log("salut");
@@ -63,7 +41,10 @@ class Router {
 			this.introduction();
 		} else {
 			this.showData();
+			this.showDetail();
 			this.returnToHome();
 		}
 	}
-}
+};
+
+var prompt = require("prompt-sync")();
