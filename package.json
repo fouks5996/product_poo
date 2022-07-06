@@ -1,0 +1,29 @@
+{
+  "name": "poo_proj",
+  "version": "1.0.0",
+  "description": "CLI for run code",
+  "main": "app.js",
+  "scripts": {
+    "test": "console.log(\"hello world\")"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fouks5996/product_poo.git"
+  },
+  "keywords": [
+    "poo"
+  ],
+  "bin": {
+    "poo": "./bin/app.js"
+  },
+  "author": "foucauld",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fouks5996/product_poo/issues"
+  },
+  "homepage": "https://github.com/fouks5996/product_poo#readme",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "prompt-sync": "^4.2.0"
+  }
+}
