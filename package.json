@@ -24,6 +24,7 @@
   "homepage": "https://github.com/fouks5996/product_poo#readme",
   "dependencies": {
     "chalk": "^5.0.1",
+    "csv-parser": "^3.0.0",
     "prompt-sync": "^4.2.0"
   }
 }
