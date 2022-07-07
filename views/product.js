@@ -31,6 +31,7 @@ module.exports = class View {
 		newPrice = parseInt(newPrice);
 		let newQuantity = prompt("Choisissez une quantité : ");
 		let newBrand = prompt("Choisissez une marque : ");
+		let newDescription = prompt("Choisissez une description : ");
 
 		if (newName.length > 12) {
 			console.log("---NOM TROP LONG----");
@@ -38,6 +39,10 @@ module.exports = class View {
 			this.create();
 		} else if (newPrice < 0 || isNaN(newPrice)) {
 			console.log("---PRIX NEGATIF OU PAS DE CHIFFRE----");
+			console.log("---VEUILLEZ RESSAISIR LES DONNEES----");
+			this.create();
+		} else if (newDescription.length == 0) {
+			console.log("---DESCRIPTION MANQUANTE----");
 			console.log("---VEUILLEZ RESSAISIR LES DONNEES----");
 			this.create();
 		}
@@ -48,6 +53,7 @@ module.exports = class View {
 			price: newPrice,
 			quantity: newQuantity,
 			brand: newBrand,
+			description: newDescription,
 		});
 	}
 
